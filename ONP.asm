@@ -2,17 +2,6 @@ org 100h
 
 start:
 
-	; Na moje oko wszytko mam, oprocz uzglednienia dwoch przypadkow: 
-
-	; 1.
-	; Przekroczenie mozliwego zakresu wartosci 16 bitow
-	; np kiedy mamy 33000+2 to wychodzi 33002, ale
-	; to jest przekroczenie wartosci 16 bitow i nasza liczba
-	; jest rowna jakiejs ujemnej liczbie z powodu czego wynik bedzie nieprawidlowy
-	; 2.
-	; Oraz kiedy pierwszy znak minus(liczba ujemna), w tym
-	; przypadku bedzie wystepowal blad
-
 	; Moj program sklada sie z dwoch czesci
 	; 1 - konwersja wpisaniego wyrazu w postac ONP
 	; 2 - obliczenie wyrazu matematycznego, ktory ma postac ONP
@@ -76,7 +65,7 @@ onp:
 		mov si,expr+2 ; to jest adres na wyraz matematyczny, ktory wpisalismy
 		mov di,end_expr ; adres na pusta zmienna, w ktorej potem bedzie skonwertowane wyrazenie matematyczne w postaci ONP
 		
-		mov ah,0 ; ah = 0 - wczesniej byl‚a cyfra, ah = 1 - wczesniej byl‚ znak. UZYWAMY DLA SPACJI
+		mov ah,0 ; ah = 0 - wczesniej bylâ€ša cyfra, ah = 1 - wczesniej bylâ€š znak. UZYWAMY DLA SPACJI
 		mov bx,0 ; bh - ilosc znakow arytmietycznych, bl - ilosc cyfr. UZYWAMY DLA ZNALEZNIENIA BLADOW
 		
 		main:	
